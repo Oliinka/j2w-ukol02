@@ -23,21 +23,21 @@
 <blockquote>
     <strong> PAST / SITUATION: ${card1}</strong>
     <div class="content">
-        <div class="text-left">${card1}</div>
+        <div class="text-left">${tarotMeaning1}</div>
         <div class="image">
             <img src="images/cards/RWS_Tarot_${card1}.jpg" alt="tarot card">
         </div>
     </div>
     <strong> PRESENT/ACTION: ${card2}</strong>
     <div class="content">
-        <div class="text-left">${card2}</div>
+        <div class="text-left">${tarotMeaning2}</div>
         <div class="image">
             <img src="images/cards/RWS_Tarot_${card2}.jpg" alt="tarot card">
         </div>
     </div>
     <strong> FUTURE/OUTCOME: ${card3}</strong>
     <div class="content">
-        <div class="text-left">${card3}</div>
+        <div class="text-left">${tarotMeaning3}</div>
         <div class="image">
             <img src="images/cards/RWS_Tarot_${card3}.jpg" alt="tarot card">
         </div>
