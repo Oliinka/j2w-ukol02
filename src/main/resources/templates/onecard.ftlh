@@ -23,7 +23,7 @@
 <blockquote>
     <h2><strong> YOUR CARD NUMBER IS: ${randomCard}</strong></h2>
     <div class="content">
-        <div class="text-left">${tarotMeaning}</div>
+        <div class="text-left-1">${tarotMeaning}</div>
         <div class="image">
             <img src="images/cards/Tarot_${randomCard}.jpg" alt="tarot card">
         </div>
