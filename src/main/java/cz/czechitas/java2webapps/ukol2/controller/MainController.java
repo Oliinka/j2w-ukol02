@@ -17,7 +17,7 @@ public class MainController {
 
     @GetMapping("/onecard")
     public ModelAndView tarrotPage() {
-        int randomCardNumber = random.nextInt(0, 22);
+        int randomCardNumber = random.nextInt(0, 78);
         int randomBackgroundPicture = random.nextInt(1, 8);
 
         String tarotMeaning = readTarotMeaning(randomCardNumber); //read same row as is the random card number
@@ -34,11 +34,14 @@ public class MainController {
     @GetMapping("/threecards")
     public ModelAndView threeTarrotCards() {
         Set<Integer> allCardNumbers = new LinkedHashSet<>(); // Use LinkedHashSet to maintain insertion order
-        for (int i = 0; i <= 22; i++) {
+        for (int i = 0; i <= 77; i++) {
             allCardNumbers.add(i);
         }
 
-        List<Integer> selectedCards = allCardNumbers.stream().limit(3).collect(Collectors.toList());
+        List<Integer> shuffledCardNumbers = new ArrayList<>(allCardNumbers);
+        Collections.shuffle(shuffledCardNumbers); // Shuffle the list
+
+        List<Integer> selectedCards = shuffledCardNumbers.subList(0, 3); // Pick the first three numbers from the shuffled list
 
         int randomBackgroundPicture = random.nextInt(1, 8);
 
@@ -48,9 +51,9 @@ public class MainController {
 
         ModelAndView modelAndView = new ModelAndView("threecards");
 
-        modelAndView.addObject("card1", selectedCards.get(0));
-        modelAndView.addObject("card2", selectedCards.get(1));
-        modelAndView.addObject("card3", selectedCards.get(2));
+        modelAndView.addObject("card1", selectedCards.get(0)); // Number on the 1st position of the shuffled list
+        modelAndView.addObject("card2", selectedCards.get(1)); // Number on the 2nd position of the shuffled list
+        modelAndView.addObject("card3", selectedCards.get(2)); // Number on the 3rd position of the shuffled list
         modelAndView.addObject("tarotMeaning1", tarotMeaning1);
         modelAndView.addObject("tarotMeaning2", tarotMeaning2);
         modelAndView.addObject("tarotMeaning3", tarotMeaning3);

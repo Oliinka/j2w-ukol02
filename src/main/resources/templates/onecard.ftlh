@@ -25,7 +25,7 @@
     <div class="content">
         <div class="text-left">${tarotMeaning}</div>
         <div class="image">
-            <img src="images/cards/RWS_Tarot_${randomCard}.jpg" alt="tarot card">
+            <img src="images/cards/Tarot_${randomCard}.jpg" alt="tarot card">
         </div>
     </div>
 </blockquote>
